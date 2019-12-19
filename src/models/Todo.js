@@ -1,9 +1,7 @@
 // models/Todo.js
-
 const endPoint = `https://super-crud-api.herokuapp.com/api/todos`;
 
 class TodoModel {
-
 	static all = () => {
 		return fetch(endPoint)
 			.then(response => response.json())
@@ -16,8 +14,7 @@ class TodoModel {
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify(todo)
-				
+			body: JSON.stringify(todo)		
 		})
 			.then(response => response.json())
 			.catch(err => console.log('Could not post todo \n', err))
@@ -32,17 +29,17 @@ class TodoModel {
 	}
 
 	static update = (todo) => {
-    return fetch(`${endPoint}/${todo._id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: JSON.stringify(todo)
-    })
-      .then(response => response.json())
-      .catch(err => console.log('Could not update todo \n', err));
-  };
+		return fetch(`${endPoint}/${todo._id}`, {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json'
+			// 'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		body: JSON.stringify(todo)
+		})
+		.then(response => response.json())
+		.catch(err => console.log('Could not update todo \n', err));
+	};
 };
 
 export default TodoModel;

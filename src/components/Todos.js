@@ -1,9 +1,8 @@
-// /component/Todos.js
+// /components/Todos.js
 import React from 'react';
 import Todo from './Todo';
 
 const Todos = (props) => {
-
 	let todos = props.todos.map((todo) => {
 		return (
 			<Todo 
@@ -20,8 +19,6 @@ const Todos = (props) => {
     {todos}
   </ul>
 );
-
-
 };
 
 export default Todos;

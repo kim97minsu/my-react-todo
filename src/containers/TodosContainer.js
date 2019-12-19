@@ -5,11 +5,9 @@ import Todos from '../components/Todos';
 import CreateTodoForm from '../components/CreateTodoForm';
 
 class TodosContainer extends Component {
-
 	state = {
 		todos: []
 	};
-
 	constructor() {
 		// super calls the parent constructor - TodoContainer Component 
 		super();
@@ -17,7 +15,7 @@ class TodosContainer extends Component {
 			todos: [],
 		};
 	};
-
+	
 	componentDidMount() {
 		this.fetchData();
 	};
@@ -51,7 +49,7 @@ class TodosContainer extends Component {
 		})
 	}
 
-	updateTodo = todo => {
+	updateTodo = (todo) => {
 		const isUpdatedTodo = t => {
 			return t._id === todo._id;
 		}
@@ -71,6 +69,7 @@ class TodosContainer extends Component {
     		<Todos 
     			todos={this.state.todos}
     			deleteTodo={this.deleteTodo}
+    			updateTodo={this.updateTodo}
     			/>
     	</div>
 	  );
